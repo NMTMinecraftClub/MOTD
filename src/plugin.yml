@@ -1,0 +1,4 @@
+name: MOTD
+version: 1.0
+main: nmt.minecraft.chavezfk.MOTD.MOTD
+description: A Simple message of the day plugin for minecraft
