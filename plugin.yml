@@ -1,0 +1,3 @@
+name: Motd
+main: nmt.minecraft.smartinez.motd.Motd
+version: 1.0
