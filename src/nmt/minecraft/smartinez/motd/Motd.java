@@ -13,19 +13,21 @@ public class Motd extends JavaPlugin implements Listener{
 	public void onEnable(){
 		this.saveDefaultConfig();
 		getServer().getPluginManager().registerEvents(this, this);
-		getLogger().info("AHHHHHHHHHHHHHHHHHHHHHHHHHHHHH TESTING STUFF");
-		//get the message and save it
-		message = this.getConfig().get("message").toString();
 	}
-	
 	
 	//detect when a player logs in
 	@EventHandler 
 	public void onPlayerJoin(PlayerJoinEvent event){
 		  Player player = event.getPlayer();
-		  event.setJoinMessage("");
-		  getLogger().info("PPPPPPPPPPPPPPPLLLLLLLLLLLLLLLLLAYYYYYYYYYYYYYYYYYEEEEERRRRRRRRRRR");
-		  player.sendMessage(message);
+		  getLogger().info(player.getDisplayName()+" Has logged in.");
+		  
+		  //get the message from the config file
+		  String mssg = this.getConfig().get("message").toString();
+		  if(mssg.isEmpty()){
+			  mssg = message;
+		  }
+		  
+		  //send the message
+		  player.sendMessage(mssg);
 	}
-		
 }
