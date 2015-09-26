@@ -1,0 +1,10 @@
+name: MOTD
+main: nmt.minecraft.jpmac26.MOTD.MOTDPlugin
+version: 0.0.2
+
+commands:
+  motd:
+    description: Displays the server's Message of the Day.
+    usage: /motd
+    permission: MOTD.motdCommand
+    permission-message: You don't have <permission>
